@@ -1,0 +1,231 @@
+[
+  {
+    "id": "RT3080",
+    "createdAt": "2021-8-18",
+    "paymentDue": "2021-8-19",
+    "description": "Re-branding",
+    "paymentTerms": 1,
+    "clientName": "Julio Iglesias",
+    "clientEmail": "julitoiglesias01@gmail.com",
+    "status": "paid",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Corrientes 1014",
+      "city": "Resistencia",
+      "postCode": "H3500",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Brand Guidelines",
+        "quantity": 1,
+        "price": 1800.90,
+        "total": 1800.90
+      }
+    ],
+    "total": 1800.90
+  },
+  {
+    "id": "XM9141",
+    "createdAt": "2021-8-21",
+    "paymentDue": "2021-9-20",
+    "description": "Graphic Design",
+    "paymentTerms": 30,
+    "clientName": "Alexis Nuñes",
+    "clientEmail": "AlexNuñes@gmail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Cabral 1081",
+      "city": "Cordoba",
+      "postCode": "5000",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Banner Design",
+        "quantity": 1,
+        "price": 156.00,
+        "total": 156.00
+      },
+      {
+        "name": "Email Design",
+        "quantity": 2,
+        "price": 200.00,
+        "total": 400.00
+      }
+    ],
+    "total": 556.00
+  },
+  {
+    "id": "RG0314",
+    "createdAt": "2021-9-24",
+    "paymentDue": "2021-10-01",
+    "description": "Website Redesign",
+    "paymentTerms": 7,
+    "clientName": "Jonas Ramirez",
+    "clientEmail": "JonasRam@gmail.com",
+    "status": "paid",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Rivadavia 357",
+      "city": "Resistencia",
+      "postCode": "H3500",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Website Redesign",
+        "quantity": 1,
+        "price": 14002.33,
+        "total": 14002.33
+      }
+    ],
+    "total": 14002.33
+  },
+  {
+    "id": "RT2080",
+    "createdAt": "2021-10-11",
+    "paymentDue": "2021-10-12",
+    "description": "Logo Concept",
+    "paymentTerms": 1,
+    "clientName": "Alisia Gutierrez",
+    "clientEmail": "alisiaG@gmail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Rivadavia 1057",
+      "city": "Resistencia",
+      "postCode": "H3500",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Logo Sketches",
+        "quantity": 1,
+        "price": 102.04,
+        "total": 102.04
+      }
+    ],
+    "total": 102.04
+  },
+  {
+    "id": "AA1449",
+    "createdAt": "2021-10-7",
+    "paymentDue": "2021-10-14",
+    "description": "Re-branding",
+    "paymentTerms": 7,
+    "clientName": "Mellisa Munoz",
+    "clientEmail": "MeliMunoz@yahoo.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Mitre 750",
+      "city": "Cordoba",
+      "postCode": "5000",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "New Logo",
+        "quantity": 1,
+        "price": 1532.33,
+        "total": 1532.33
+      },
+      {
+        "name": "Brand Guidelines",
+        "quantity": 1,
+        "price": 2500.00,
+        "total": 2500.00
+      }
+    ],
+    "total": 4032.33
+  },
+  {
+    "id": "TY9141",
+    "createdAt": "2021-10-01",
+    "paymentDue": "2021-10-31",
+    "description": "Landing Page Design",
+    "paymentTerms": 30,
+    "clientName": "Tomas Walker",
+    "clientEmail": "tomasWelker@gmail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Hipólito Yrigoyen 124",
+      "city": "Neuquen",
+      "postCode": "N8300",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Web Design",
+        "quantity": 1,
+        "price": 6155.91,
+        "total": 6155.91
+      }
+    ],
+    "total": 6155.91
+  },
+  {
+    "id": "FV2353",
+    "createdAt": "2021-11-05",
+    "paymentDue": "2021-11-12",
+    "description": "Logo Re-design",
+    "paymentTerms": 7,
+    "clientName": "Ana Burley",
+    "clientEmail": "anitaB@gmail.com",
+    "status": "draft",
+    "senderAddress": {
+      "street": "Azcuénaga 1781",
+      "city": "Buenos Aires",
+      "postCode": "C1425FFG",
+      "country": "Argentina"
+    },
+    "clientAddress": {
+      "street": "Int. Carro 206",
+      "city": "Neuquen",
+      "postCode": "N8300",
+      "country": "Argentina"
+    },
+    "items": [
+      {
+        "name": "Logo Re-design",
+        "quantity": 1,
+        "price": 3102.04,
+        "total": 3102.04
+      }
+    ],
+    "total": 3102.04
+  }
+]
