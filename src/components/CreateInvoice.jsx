@@ -372,7 +372,7 @@ function CreateInvoice({
                 className=" appearance-none w-full py-2 px-4 border-[.2px] rounded-lg focus:outline-none  dark:bg-[#1e2139] dark:text-white dark:border-gray-800  focus:outline-purple-400 border-gray-300 select-status"
               >
                 {deliveryTimes.map((time) => (
-                  <option value={time.value}>{time.text}</option>
+                  <option value={time.value}>{time.text}a</option>
                 ))}
               </select>
             </div>
