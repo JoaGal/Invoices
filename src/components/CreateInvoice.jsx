@@ -22,7 +22,6 @@ import {
 import InputCreateInvoice from "./InputCreateInvoice";
 
 function CreateInvoice({
-  openCreateInvoice,
   setOpenCreateInvoice,
   invoice,
   type,
@@ -31,28 +30,13 @@ function CreateInvoice({
 
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [isValidatorActive, setIsValidatorActive] = useState(false);
-  const [isValid, setIsValid] = useState(true);
-
-  const [filterValue, setfilterValue] = useState("");
+  
   const deliveryTimes = [
     { text: "Next 1 day", value: 1 },
     { text: "Next 7 day", value: 7 },
     { text: "Next 14 day", value: 14 },
     { text: "Next 30 day", value: 30 },
   ];
-  const [senderStreet, setSenderStreet] = useState("");
-  const [senderCity, setSenderCity] = useState("");
-  const [senderPostCode, setSenderPostCode] = useState("");
-  const [senderCountry, setSenderCountry] = useState("");
-
-  const [clientName, setClientName] = useState("");
-  const [clientEmail, setClientEmail] = useState("");
-
-  const [clientStreet, setClientStreet] = useState("");
-  const [clientCity, setClientCity] = useState("");
-  const [clientPostCode, setClientPostCode] = useState("");
-  const [clientCountry, setClientCountry] = useState("");
-  const [description, setDescription] = useState("");
 
   const [invoiceNew, setInvoiceNew] = useState({
     senderStreet: "",
@@ -66,18 +50,19 @@ function CreateInvoice({
     clientPostCode: "",
     clientCountry: "",
     description: "",
-    paymentTerms: "",
+    selectDeliveryDate: "",
   });
 
-  // const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setInvoiceNew((prev) => ({
-  //         ...prev,
-  //         [name]: value,
-  //     }));
-  //     };
+  const { senderStreet, senderCity, senderPostCode, senderCountry, clientName, clientEmail, clientStreet, clientCity, clientPostCode, clientCountry, description, selectDeliveryDate } = invoiceNew;  
 
-  const [selectDeliveryDate, setSelectDeliveryDate] = useState("");
+  const handleChange = (e) => {
+      const { name, value } = e.target;
+      setInvoiceNew((prev) => ({
+          ...prev,
+          [name]: value,
+      }));
+      };
+
   const [paymentTerms, setpaymentTerms] = useState(deliveryTimes[0].value);
 
   const [item, setItem] = useState([
@@ -149,7 +134,6 @@ function CreateInvoice({
           item,
         })
       );
-      dispatch(invoiceSlice.actions.filterInvoice({ status: filterValue }));
     }
   };
 
@@ -158,18 +142,21 @@ function CreateInvoice({
       return { ...obj, id: index + 1 };
     });
 
-    setClientName(invoice.clientName);
-    setClientCity(invoice.clientAddress.city);
-    setClientStreet(invoice.clientAddress.street);
-    setClientPostCode(invoice.clientAddress.postCode);
-    setClientCountry(invoice.clientAddress.country);
-    setClientEmail(invoice.clientEmail);
-    setpaymentTerms(invoice.paymentTerms);
-    setDescription(invoice.description);
-    setSenderCity(invoice.senderAddress.city);
-    setSenderStreet(invoice.senderAddress.street);
-    setSenderCountry(invoice.senderAddress.country);
-    setSenderPostCode(invoice.senderAddress.postCode);
+    setInvoiceNew({
+      senderStreet: invoice.senderAddress.street,
+      senderCity: invoice.senderAddress.city,
+      senderPostCode: invoice.senderAddress.postCode,
+      senderCountry: invoice.senderAddress.country,
+      clientName: invoice.clientName,
+      clientEmail: invoice.clientEmail,
+      clientStreet: invoice.clientAddress.street,
+      clientCity: invoice.clientAddress.city,
+      clientPostCode: invoice.clientAddress.postCode,
+      clientCountry: invoice.clientAddress.country,
+      description: invoice.description,
+      paymentTerms: invoice.paymentTerms,
+    })
+
     setItem(updatedItemsArray);
 
     setIsFirstLoad(false);
@@ -241,7 +228,7 @@ function CreateInvoice({
             <div className=" flex flex-col col-span-3">
               <InputCreateInvoice
                 name="Street Address"
-                functionOnChange={setSenderStreet}
+                functionOnChange={handleChange}
                 value={senderStreet}
                 validator={validateSenderStreetAddress}
                 isValidatorActive={isValidatorActive}
@@ -252,7 +239,7 @@ function CreateInvoice({
             <div className=" flex flex-col mr-4 col-span-1">
               <InputCreateInvoice
                 name="City"
-                functionOnChange={setSenderCity}
+                functionOnChange={handleChange}
                 value={senderCity}
                 validator={validateSenderCity}
                 isValidatorActive={isValidatorActive}
@@ -262,7 +249,7 @@ function CreateInvoice({
             <div className=" flex flex-col mr-4 col-span-1">
               <InputCreateInvoice
                 name="Post Code"
-                functionOnChange={setSenderPostCode}
+                functionOnChange={handleChange}
                 value={senderPostCode}
                 validator={validateSenderPostCode}
                 isValidatorActive={isValidatorActive}
@@ -272,7 +259,7 @@ function CreateInvoice({
             <div className=" flex flex-col col-span-1">
               <InputCreateInvoice
                 name="Country"
-                functionOnChange={setSenderCountry}
+                functionOnChange={handleChange}
                 value={senderCountry}
                 validator={validateSenderCountry}
                 isValidatorActive={isValidatorActive}
@@ -289,7 +276,7 @@ function CreateInvoice({
             <div className=" flex flex-col col-span-3">
               <InputCreateInvoice
                 name="Client Name"
-                functionOnChange={setClientName}
+                functionOnChange={handleChange}
                 value={clientName}
                 validator={validateCLientName}
                 isValidatorActive={isValidatorActive}
@@ -300,7 +287,7 @@ function CreateInvoice({
             <div className=" flex flex-col   col-span-3">
               <InputCreateInvoice
                 name="Client Email"
-                functionOnChange={setClientEmail}
+                functionOnChange={handleChange}
                 value={clientEmail}
                 validator={validateCLientEmail}
                 isValidatorActive={isValidatorActive}
@@ -311,7 +298,7 @@ function CreateInvoice({
             <div className=" flex flex-col col-span-3">
               <InputCreateInvoice
                 name="Street Address"
-                functionOnChange={setClientStreet}
+                functionOnChange={handleChange}
                 value={clientStreet}
                 validator={validateClientStreetAddress}
                 isValidatorActive={isValidatorActive}
@@ -322,7 +309,7 @@ function CreateInvoice({
             <div className=" flex flex-col mr-4 col-span-1">
               <InputCreateInvoice
                 name="City"
-                functionOnChange={setClientCity}
+                functionOnChange={handleChange}
                 value={clientCity}
                 validator={validateClientCity}
                 isValidatorActive={isValidatorActive}
@@ -333,7 +320,7 @@ function CreateInvoice({
             <div className=" flex flex-col mr-4 col-span-1">
               <InputCreateInvoice
                 name="Post Code"
-                functionOnChange={setClientPostCode}
+                functionOnChange={handleChange}
                 value={clientPostCode}
                 validator={validateClientPostCode}
                 isValidatorActive={isValidatorActive}
@@ -344,7 +331,7 @@ function CreateInvoice({
             <div className=" flex flex-col col-span-1">
               <InputCreateInvoice 
                 name="Country"
-                functionOnChange={setClientCountry}
+                functionOnChange={handleChange}
                 value={clientCountry}
                 validator={validateClientCountry}
                 isValidatorActive={isValidatorActive}
@@ -359,8 +346,9 @@ function CreateInvoice({
               <input
                 type="date"
                 value={selectDeliveryDate}
-                onChange={(e) => setSelectDeliveryDate(e.target.value)}
+                onChange={handleChange}
                 className=" dark:bg-[#1e2139] py-2 px-4 border-[.2px] rounded-lg  focus:outline-purple-400 border-gray-300 focus:outline-none  dark:border-gray-800 dark:text-white  mr-4"
+                name="selectDeliveryDate"
               />
             </div>
 
@@ -370,6 +358,7 @@ function CreateInvoice({
                 value={paymentTerms}
                 onChange={(e) => setpaymentTerms(e.target.value)}
                 className=" appearance-none w-full py-2 px-4 border-[.2px] rounded-lg focus:outline-none  dark:bg-[#1e2139] dark:text-white dark:border-gray-800  focus:outline-purple-400 border-gray-300 select-status"
+                name="paymentTerms"
               >
                 {deliveryTimes.map((time) => (
                   <option value={time.value}>{time.text}</option>
@@ -381,8 +370,9 @@ function CreateInvoice({
           <div className=" mx-1 mt-4 flex flex-col ">
             <label className=" text-gray-400 font-light">Description</label>
             <input
+              name="description"
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={handleChange}
               type="text"
               className=" dark:bg-[#1e2139] py-2 px-4 border-[.2px] rounded-lg focus:outline-none   focus:outline-purple-400 border-gray-300 dark:border-gray-800 dark:text-white"
             />

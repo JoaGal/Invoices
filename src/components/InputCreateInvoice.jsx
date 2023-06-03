@@ -8,7 +8,7 @@ function InputCreateInvoice({name, functionOnChange, value, validator, isValidat
         type="text"
         value={value}
         name={nameInvoice}
-        onChange={(e) => functionOnChange(e.target.value)}
+        onChange={functionOnChange}
         className={` dark:bg-[#1e2139] py-2 px-4 border-[.2px] focus:outline-none  rounded-lg  focus:outline-purple-400 ${
           isValidatorActive &&
           !validator(value) &&

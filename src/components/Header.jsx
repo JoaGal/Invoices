@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import sun from "../assets/icon-sun.svg";
 import moon from "../assets/icon-moon.svg";
 import useDarkMode from "../hooks/useDarkMode";
-import profile from "../assets/image-avatar.jpg";
+import profileUser from "../assets/profileUser.svg"
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -65,7 +65,7 @@ function Header() {
           <div className=" h-[80px] border-dotted border-l border-[#494e6e] mx-6"></div>
 
           <div className=" relative  ">
-            <img src={profile} className="h-[50px] rounded-full" />
+            <img src={profileUser} className="h-[50px] rounded-full" />
           </div>
         </div>
       </header>
@@ -105,7 +105,7 @@ function Header() {
               <div className=" w-[100px] border-dotted border-t border-[#494e6e] my-6"></div>
                 
               <div className=" relative  ml-4 mb-4 ">
-                <img src={profile} className="h-[50px] rounded-full" />
+                <img src={profileUser} className="h-[50px] rounded-full" />
               </div>
             </div>
           </div>
